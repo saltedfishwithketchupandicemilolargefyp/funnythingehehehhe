@@ -1,0 +1,27 @@
+ollama:
+  embedding_model: "nomic-embed-text"
+  base_url: http://localhost:11434 # when Ollama is running locally (instead of Docker)
+
+chat_config:
+  chat_memory_length: 2
+  number_of_retrieved_documents: 3
+
+text_splitter:
+  chunk_size: 1024  # Number of characters; adjust as needed
+  overlap: 50       # Number of overlapping characters between chunks
+  separators: ["\n", "\n\n"]  # How to split the text, by newlines in this case
+
+
+whisper_model: "openai/whisper-small"
+
+chromadb:
+  chromadb_path: "chroma_db"
+  collection_name: "documents" 
+
+folders:
+  pdfs: "./pdfs"
+  pptxs: "./pptxs"
+  xlsxs: "./xlsxs"
+  docxs: "./docxs"
+
+chat_sessions_database_path: "./chat_sessions/chat_sessions.db"
